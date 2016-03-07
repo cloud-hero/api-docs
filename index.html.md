@@ -116,8 +116,8 @@ curl -X GET "http://s.cloudhero.io:8080/providers"
           "name": "default", 
           "organisation": "56dd5e9610d396503e2a6ab6", 
           "id": "56dd601c10d396503e2a6ab7", 
-          "provider_type": "ec2"}, 
-    {
+          "provider_type": "ec2"
+        }, 
       "provider_meta": 
         {
           "secretKey": "XR1+CRk9/YlD5jRS0rJod09ds9N5xT+EUsiUAF", 
