@@ -131,7 +131,7 @@ curl -X GET "http://s.cloudhero.io:8080/providers"
       "provider_meta": 
         {
           "secretKey": "XR1+CRk9/YlD5jRS0rJod09ds9N5xT+EUsiUAF", 
-          "accessKey": "AKIAkK0kkBNK3TdSFZGGA"}, 
+          "accessKey": "AKIAkK0kkBNK3TdSFZGGA", 
           "name": "default", 
           "organisation": "56dd5e9610d396503e2a6ab6", 
           "id": "56dd601c10d396503e2a6ab7", 
@@ -140,7 +140,7 @@ curl -X GET "http://s.cloudhero.io:8080/providers"
       "provider_meta": 
         {
           "secretKey": "XR1+CRk9/YlD5jRS0rJod09ds9N5xT+EUsiUAF", 
-          "accessKey": "AKIAkK0kkBNK3TdSFZGGA"}, 
+          "accessKey": "AKIAkK0kkBNK3TdSFZGGA", 
           "name": "second-provider", 
           "organisation": "56dd5e9610d396503e2a6ab6", 
           "id": "56dd614610d396503e2a6ab8", 
@@ -159,7 +159,7 @@ This endpoint is used to query all available cloud providers that are configured
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get Cloud Provider Metadata
+## Get cloud provider metadata
 
 ```shell
 curl -X GET "http://s.cloudhero.io:8080/providers/cloud_provider_id/meta"
@@ -182,7 +182,7 @@ curl -X GET "http://s.cloudhero.io:8080/providers/cloud_provider_id/meta"
         {
           "endpoint": "ec2.ap-northeast-1.amazonaws.com",
           "name": "ap-northeast-1"
-        }
+        },
       "sizes": 
         {
           "Cluster CPU": 
@@ -210,5 +210,8 @@ curl -X GET "http://s.cloudhero.io:8080/providers/cloud_provider_id/meta"
 }
 ```
 
-This endpoint is used to get cloud providers metadata, like available regions and server sizes
+To list cloud providers metadata on existing cloud providers, send a GET requst to `/providers/cloud_provider_id/meta`
 
+Parameter | Description
+--------- | -----------
+cloud_provider_id | The ID of the configured cloud provider 
