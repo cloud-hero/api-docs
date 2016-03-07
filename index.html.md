@@ -152,6 +152,7 @@ curl -X GET "http://s.cloudhero.io:8080/providers/cloud_provider_id/meta"
 
 > The above command returns JSON structured like this:
 
+```json
 {
   "locations": 
     {
