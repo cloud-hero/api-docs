@@ -48,6 +48,15 @@ curl "http://s.cloudhero.io:8080/accounts/register"
 
 ```
 
+Parameter | Description
+--------- | -----------
+email | The ID of the kitten to retrieve
+password | The password for your account
+password_confirm | Same password as above
+name | Your company name
+user_name | Your email address again
+
+
  CloudHero uses API keys to allow access to the API.
 
 `Your API key will will be returned by persistent_token`
@@ -89,6 +98,10 @@ curl -X POST "http://s.cloudhero.io:8080/providers"
 ] 
 
 ```
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the kitten to retrieve
 
 This endpoint is used to add a Amazon EC2 cloud provider. In order to do this you need to provide a valid AWS access key and AWS secret key.
 
