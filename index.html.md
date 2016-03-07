@@ -67,7 +67,9 @@ CloudHero expects for the API key to be included in all API requests to the serv
 
 # Cloud Providers
 
-## Add AWS EC2 Cloud Provider
+## Add AWS EC2 cloud provider
+
+> To add a AWS EC2 cloud provider, use this code:
 
 ```shell
 curl -X POST "http://s.cloudhero.io:8080/providers"
