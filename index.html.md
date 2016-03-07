@@ -73,6 +73,7 @@ curl -X POST "http://s.cloudhero.io:8080/providers"
 > The above command returns JSON structured like this:
 
 ```json
+
 [
  {
   "provider_meta":
@@ -86,6 +87,7 @@ curl -X POST "http://s.cloudhero.io:8080/providers"
     "provider_type": "ec2"
   }
 ] 
+
 ```
 
 This endpoint is used to add a Amazon EC2 cloud provider. In order to do this you need to provide a valid AWS access key and AWS secret key.
@@ -105,6 +107,7 @@ curl -X GET "http://s.cloudhero.io:8080/providers"
 > The above command returns JSON structured like this:
 
 ```json
+
 {
  "ec2": 
   [
@@ -130,6 +133,7 @@ curl -X GET "http://s.cloudhero.io:8080/providers"
     }
   ]
 }
+
 ```
 
 This endpoint is used to query all available cloud providers that are configured for your account.
@@ -191,41 +195,6 @@ curl -X GET "http://s.cloudhero.io:8080/providers/cloud_provider_id/meta"
 ```
 
 This endpoint is used to get cloud providers metadata, like available regions and server sizes
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
