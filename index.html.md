@@ -5,8 +5,8 @@ language_tabs:
   - shell
 
 toc_footers:
-  - <a href='#'>Sign Up for CloudHero</a>
-  - <a href='https://cloudhero.io'>CloudHero API Documentation</a>
+  - <a href='https://cloudhero.io'>Sign Up for CloudHero</a>
+  - <a href='#'>CloudHero API Documentation</a>
 
 includes:
   - errors
@@ -215,3 +215,69 @@ To list cloud providers metadata on existing cloud providers, send a GET requst 
 Parameter | Description
 --------- | -----------
 cloud_provider_id | The ID of the configured cloud provider 
+
+# Applications
+
+## Create an applications
+
+> To add a new application, use this code:
+
+```shell
+curl -X POST "http://s.cloudhero.io:8080/applications" 
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+     -d '{"application_name": "My App", "application_type": "custom"}
+```
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "application_name": "My App", 
+    "application_type": "custom", 
+    "id": "56dd62f210d396503e2a6abb", 
+    "environments": [], 
+    "deployments_count": 0
+  }
+]
+```
+
+To create a new application, send a POST requst to `/applications`
+
+Parameter | Description
+--------- | -----------
+application_name | Give your application a name
+application_type | We support only custom applicaitons for the moment
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+## Query application info
+
+> To get info about your applications, use this code:
+
+```shell
+curl -X GET "http://s.cloudhero.io:8080/applications" 
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+```
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "application_name": "My App", 
+    "application_type": "custom", 
+    "id": "56dd62f210d396503e2a6abb", 
+    "environments": [], 
+    "deployments_count": 0
+  }
+]
+```
+
+To query your application, send a GET requst to `/applications`
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
