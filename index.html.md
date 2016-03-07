@@ -38,31 +38,17 @@ Kittn expects for the API key to be included in all API requests to the server i
 
 `Authorization: meowmeowmeow`
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+# Cloud Providers
 
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+## Add AWS EC3 Cloud Provider
 
 ```shell
-curl "http://example.com/api/kittens"
+curl -X POST "http://s.cloudhero.io:8080/providers"
+  -H  "Content-Type: application/json"
   -H "Authorization: meowmeowmeow"
+  -d '{"cloud_provider": "ec2", "provider_name": "my-provider", 
+       "accessKey": "AWSAccessKey", 
+       "secretKey": "AWSSecretKey"}'
 ```
 
 > The above command returns JSON structured like this:
@@ -70,18 +56,12 @@ curl "http://example.com/api/kittens"
 ```json
 [
   {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "secretKey": "XR1+CRk9/YlD5jRS0rJod09ds9N5xT+EUsiUAFw", 
+    "accessKey": "AKIAkK0kkBNK3TdSFZGGA"}, 
+    "name": "my-provider", 
+    "organisation": "56dd5e9610d396503e2a6ab6", 
+    "id": "56dd617610d396503e2a6ab9", 
+    "provider_type": "ec2"
   }
 ]
 ```
