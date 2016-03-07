@@ -218,7 +218,7 @@ cloud_provider_id | The ID of the configured cloud provider
 
 # Applications
 
-## Create an applications
+## Create an application
 
 > To add a new application, use this code:
 
@@ -276,7 +276,7 @@ curl -X GET "http://s.cloudhero.io:8080/applications"
 ]
 ```
 
-To query your application, send a GET requst to `/applications`
+To query your applications, send a GET requst to `/applications`
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
