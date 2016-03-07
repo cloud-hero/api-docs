@@ -64,7 +64,7 @@ CloudHero expects for the API key to be included in all API requests to the serv
 ```shell
 curl -X POST "http://s.cloudhero.io:8080/providers"
   -H  "Content-Type: application/json"
-  -H "Authorization: meowmeowmeow"
+  -H "Authentication-Token: meowmeowmeow"
   -d '{"cloud_provider": "ec2", "provider_name": "my-provider", 
        "accessKey": "AWSAccessKey", 
        "secretKey": "AWSSecretKey"}'
@@ -88,9 +88,45 @@ curl -X POST "http://s.cloudhero.io:8080/providers"
 ] 
 ```
 
-This endpoint retrieves all kittens.
+This endpoint is used to add a Amazon EC2 cloud provider.
 
-### HTTP Request
+## Get available providers
+
+```shell
+curl -X GET "http://s.cloudhero.io:8080/providers"
+     -H "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "ec2": 
+  [
+    {
+      "provider_meta": 
+        {
+          "secretKey": "XR1+CRk9/YlD5jRS0rHo8opUEJ9N5xT+EUsiUAFw", 
+          "accessKey": "AKIAJLBNK3T6XATFZFEA"}, 
+          "name": "default", 
+          "organisation": "56dd5e9610d396503e2a6ab6", 
+          "id": "56dd601c10d396503e2a6ab7", 
+          "provider_type": "ec2"}, 
+      {"provider_meta": 
+        {
+          "secretKey": "XR1+CRk9/YlD5jRS0rHo8opUEJ9N5xT+EUsiUAFw", 
+          "accessKey": "AKIAJLBNK3T6XATFZFEA"}, 
+          "name": "second-provider", 
+          "organisation": "56dd5e9610d396503e2a6ab6", 
+          "id": "56dd614610d396503e2a6ab8", 
+          "provider_type": "ec2"
+        },
+      },
+    ]
+}
+```
+
 
 `GET http://example.com/api/kittens`
 
