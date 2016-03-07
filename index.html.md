@@ -55,15 +55,18 @@ curl -X POST "http://s.cloudhero.io:8080/providers"
 
 ```json
 [
-  {
-    "secretKey": "XR1+CRk9/YlD5jRS0rJod09ds9N5xT+EUsiUAFw", 
-    "accessKey": "AKIAkK0kkBNK3TdSFZGGA"}, 
+ {
+  "provider_meta":
+   {
+     "secretKey": "XR1+CRk9/YlD5jRS0rJod09ds9N5xT+EUsiUAFw", 
+     "accessKey": "AKIAkK0kkBNK3TdSFZGGA" 
+    },
     "name": "my-provider", 
     "organisation": "56dd5e9610d396503e2a6ab6", 
     "id": "56dd617610d396503e2a6ab9", 
     "provider_type": "ec2"
   }
-]
+] 
 ```
 
 This endpoint retrieves all kittens.
