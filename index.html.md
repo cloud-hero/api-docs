@@ -29,9 +29,25 @@ We have language bindings in Shell and Python (comming soon)! You can view code 
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "http://s.cloudhero.io:8080/accounts/register"
-  -H "Content-Type: application/json" -d '{"email": "my@email.com", "password": "secretpassword", "password_confirm": "secretpassword", "name": "company name", "user_name": "my@email.com"}'
+  -H "Content-Type: application/json" 
+  -d '{"email": "my@email.com", "password": "secretpassword", 
+       "password_confirm": "secretpassword", "name": "company name", 
+       "user_name": "my@email.com"}'
 ```
 
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "persistent_token": "39398748932387642323203969547853760605", 
+    "errors": [], 
+    "refreshing_token": "KKMKodmdiiuhh9u9-NNN0d9d.Cb8EtQ.iwXPzQlbYS0cgXkIkT1D3Ak3Dxw"
+  }
+]  
+
+```
+persistent_token
  CloudHero uses API keys to allow access to the API. You can register a CloudHero API key at our [developer portal](http://example.com/developers).
 
 Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
