@@ -16,7 +16,7 @@ search: true
 
 # Introduction
 
-Welcome to the CloduHero API! You can use our API to access CloudHeor API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the CloudHero API! You can use our API to access CloudHero API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
 We have language bindings in Shell and Python (comming soon)! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
@@ -24,7 +24,7 @@ We have language bindings in Shell and Python (comming soon)! You can view code 
 # Authentication
 ## Register
 
-> To authorize, use this code:
+> To register, use this code:
 
 ```ruby
 require 'kittn'
@@ -40,8 +40,8 @@ api = kittn.authorize('meowmeowmeow')
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl "http://s.cloudhero.io:8080/accounts/register"
+  -H "Content-Type: application/json" -d '{"email": "my@email.com", "password": "secretpassword", "password_confirm": "secretpassword", "name": "company name", "user_name": "my@email.com"}'
 ```
 
 > Make sure to replace `meowmeowmeow` with your API key.
