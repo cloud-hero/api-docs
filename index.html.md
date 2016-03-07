@@ -281,3 +281,63 @@ To query your applications, send a GET requst to `/applications`
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
+
+# Environments
+
+## Create a single server environment
+
+> To createa a single server environment use this code:
+
+```shell
+curl -X POST "http://s.cloudhero.io:8080/applications/application_id/environments"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+     -d '{"provider_id": "56dd8bb410d396398074aa16", 
+          "region": "region", "environment": "env_name", 
+          "nodes": [{"packages": ["pkg_name"], "name": "node_name", "size": "size"}]}
+```
+> The above command returns JSON structured like this:
+
+To create a single server environment, send a POST requst to `/applications/application_id/environments`
+
+Parameter | Description
+--------- | -----------
+application_id | Application ID
+region | Server region (eg. "us-east-1")
+env_name | Environment name (eg. production)
+pkg_name | Selected pakages to be installe on server (eg. docker, mysql, apache)
+node_name | Give your server a name
+size | Server size (eg. t2.micro)
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+## Create a multiple server environment
+
+> To createa a multiple server environment use this code:
+
+```shell
+curl -X POST "http://s.cloudhero.io:8080/applications/application_id/environments"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+     -d '{"provider_id": "56dd8bb410d396398074aa16", 
+          "region": "region", "environment": "env_name", 
+          "nodes": [{"packages": ["pkg_name"], "name": "node_name1", "size": "size"},
+                    {"packages": ["pkg_name"], "name": "node_name2", "size": "size"},
+                    {"packages": ["pkg_name"], "name": "node_name3", "size": "size"}]}
+```
+> The above command returns JSON structured like this:
+
+Parameter | Description
+--------- | -----------
+application_id | Application ID
+region | Server region (eg. "us-east-1")
+env_name | Environment name (eg. production)
+pkg_name | Selected pakages to be installe on server (eg. docker, mysql, apache)
+node_name | Give your server a name
+size | Server size (eg. t2.micro)
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
