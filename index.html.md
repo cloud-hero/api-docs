@@ -50,12 +50,11 @@ curl "http://s.cloudhero.io:8080/accounts/register"
 
 Parameter | Description
 --------- | -----------
-email | The ID of the kitten to retrieve
+email | Your email address
 password | The password for your account
 password_confirm | Same password as above
 name | Your company name
 user_name | Your email address again
-
 
  CloudHero uses API keys to allow access to the API.
 
@@ -99,11 +98,14 @@ curl -X POST "http://s.cloudhero.io:8080/providers"
 
 ```
 
+This endpoint is used to add a Amazon EC2 cloud provider. In order to do this you need to provide a valid AWS access key and AWS secret key.
+
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
-
-This endpoint is used to add a Amazon EC2 cloud provider. In order to do this you need to provide a valid AWS access key and AWS secret key.
+cloud_provider | The ID of the cloud provider ec2 for AWS
+provider_name | The name of the cloud provider
+accessKey | AWS access key
+secretKey | AWS secret key
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
@@ -207,14 +209,4 @@ curl -X GET "http://s.cloudhero.io:8080/providers/cloud_provider_id/meta"
 ```
 
 This endpoint is used to get cloud providers metadata, like available regions and server sizes
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
 
