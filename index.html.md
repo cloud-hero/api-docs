@@ -26,25 +26,11 @@ We have language bindings in Shell and Python (comming soon)! You can view code 
 
 > To register, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "http://s.cloudhero.io:8080/accounts/register"
   -H "Content-Type: application/json" -d '{"email": "my@email.com", "password": "secretpassword", "password_confirm": "secretpassword", "name": "company name", "user_name": "my@email.com"}'
 ```
-
-> Make sure to replace `meowmeowmeow` with your API key.
 
  CloudHero uses API keys to allow access to the API. You can register a CloudHero API key at our [developer portal](http://example.com/developers).
 
