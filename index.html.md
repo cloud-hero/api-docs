@@ -88,7 +88,11 @@ curl -X POST "http://s.cloudhero.io:8080/providers"
 ] 
 ```
 
-This endpoint is used to add a Amazon EC2 cloud provider.
+This endpoint is used to add a Amazon EC2 cloud provider. In order to do this you need to provide a valid AWS access key and AWS secret key.
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
 
 ## Get available providers
 
