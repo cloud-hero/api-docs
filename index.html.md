@@ -107,41 +107,36 @@ curl -X GET "http://s.cloudhero.io:8080/providers"
     {
       "provider_meta": 
         {
-          "secretKey": "XR1+CRk9/YlD5jRS0rHo8opUEJ9N5xT+EUsiUAFw", 
-          "accessKey": "AKIAJLBNK3T6XATFZFEA"}, 
+          "secretKey": "XR1+CRk9/YlD5jRS0rJod09ds9N5xT+EUsiUAF", 
+          "accessKey": "AKIAkK0kkBNK3TdSFZGGA"}, 
           "name": "default", 
           "organisation": "56dd5e9610d396503e2a6ab6", 
           "id": "56dd601c10d396503e2a6ab7", 
           "provider_type": "ec2"}, 
-      {"provider_meta": 
+    {
+      "provider_meta": 
         {
-          "secretKey": "XR1+CRk9/YlD5jRS0rHo8opUEJ9N5xT+EUsiUAFw", 
-          "accessKey": "AKIAJLBNK3T6XATFZFEA"}, 
+          "secretKey": "XR1+CRk9/YlD5jRS0rJod09ds9N5xT+EUsiUAF", 
+          "accessKey": "AKIAkK0kkBNK3TdSFZGGA"}, 
           "name": "second-provider", 
           "organisation": "56dd5e9610d396503e2a6ab6", 
           "id": "56dd614610d396503e2a6ab8", 
           "provider_type": "ec2"
         },
-      },
-    ]
+    },
+  ]
 }
 ```
 
+This endpoint is used to query all available cloud providers that are configured for your account.
 
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+`"id": "56dd614610d396503e2a6ab8"` is the cloud provider id. It can be used for furhter operations, like create a Environment or query cloud provider metadata
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
+## Get Cloud Provider Metadata
 
 ```ruby
 require 'kittn'
