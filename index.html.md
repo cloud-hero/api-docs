@@ -107,7 +107,6 @@ curl -X GET "http://s.cloudhero.io:8080/providers"
 > The above command returns JSON structured like this:
 
 ```json
-
 {
  "ec2": 
   [
@@ -133,7 +132,6 @@ curl -X GET "http://s.cloudhero.io:8080/providers"
     }
   ]
 }
-
 ```
 
 This endpoint is used to query all available cloud providers that are configured for your account.
