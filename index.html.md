@@ -47,16 +47,19 @@ curl "http://s.cloudhero.io:8080/accounts/register"
 ]  
 
 ```
-persistent_token
- CloudHero uses API keys to allow access to the API. You can register a CloudHero API key at our [developer portal](http://example.com/developers).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+ CloudHero uses API keys to allow access to the API.
+
+`Your API key will will be returned by persistent_token`
+
+CloudHero expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: meowmeowmeow`
 
+
 # Cloud Providers
 
-## Add AWS EC3 Cloud Provider
+## Add AWS EC2 Cloud Provider
 
 ```shell
 curl -X POST "http://s.cloudhero.io:8080/providers"
