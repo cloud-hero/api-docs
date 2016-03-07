@@ -218,6 +218,10 @@ Parameter | Description
 --------- | -----------
 cloud_provider_id | The ID of the configured cloud provider 
 
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
 # Applications
 
 ## Create an application
