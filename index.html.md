@@ -290,7 +290,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 # Environments
 
-## Create a single server environment
+## Create single server environment
 
 > To createa a single server environment use this code:
 
@@ -303,6 +303,14 @@ curl -X POST "http://s.cloudhero.io:8080/applications/application_id/environment
           "nodes": [{"packages": ["pkg_name"], "name": "node_name", "size": "size"}]}
 ```
 > The above command returns JSON structured like this:
+
+```json
+{
+  "ready": true, 
+  "environment": "52dea11f10d39637655819b1", 
+  "account": "56da890610d396320ecd159b"
+}
+```
 
 To create a single server environment, send a POST requst to `/applications/application_id/environments`
 
@@ -319,7 +327,7 @@ size | Server size (eg. t2.micro)
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Create a multiple server environment
+## Create multiple server environment
 
 > To createa a multiple server environment use this code:
 
@@ -335,6 +343,14 @@ curl -X POST "http://s.cloudhero.io:8080/applications/application_id/environment
 ```
 > The above command returns JSON structured like this:
 
+```json
+{
+  "ready": true, 
+  "environment": "52dea11f10d39637655819b1", 
+  "account": "56da890610d396320ecd159b"
+}
+```
+
 Parameter | Description
 --------- | -----------
 application_id | Application ID
@@ -343,6 +359,57 @@ env_name | Environment name (eg. production)
 pkg_name | Selected pakages to be installe on server (eg. docker, mysql, apache)
 node_name | Give your server a name
 size | Server size (eg. t2.micro)
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+## Query environment
+
+> To query an environment use this code:
+
+```shell
+curl -X GET "http://s.cloudhero.io:8080/environments/environment_id/query"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+    "std_out": {
+        "account-username-aws-ec2": {
+            "ec2": {
+                "account-user-dev-1-staging1-ransom": {
+                    "private_ips": "172.31.30.29",
+                    "image": "ami-116d857a",
+                    "state": "running",
+                    "public_ips": "52.87.201.52",
+                    "size": "t2.small",
+                    "id": "i-aa18ee31",
+                    "name": "account-user-dev-1-staging1-ransom"
+                },
+                "account-user-dev-1-staging1-random": {
+                    "private_ips": "172.31.31.30",
+                    "image": "ami-116d857a",
+                    "state": "running",
+                    "public_ips": "52.90.48.34",
+                    "size": "t2.small",
+                    "id": "i-ab18ee30",
+                    "name": "account-user-dev-1-staging1-random"
+                }
+            }
+        }
+    },
+    "success": true
+}
+```
+
+To query your environments, send a GET requst to `/environments/environment_id/query`
+
+Parameter | Description
+--------- | -----------
+environment_id | ID of environment that you want to query
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
