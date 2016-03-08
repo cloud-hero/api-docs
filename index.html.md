@@ -69,9 +69,9 @@ CloudHero expects for the API key to be included in all API requests to the serv
 
 # Cloud Providers
 
-## Add AWS EC2 cloud provider
+## Add Amazon EC2
 
-> To add a AWS EC2 cloud provider, use this code:
+> To add Amazon EC2 cloud provider, use this code:
 
 ```shell
 curl -X POST "http://s.cloudhero.io:8080/providers"
@@ -102,7 +102,7 @@ curl -X POST "http://s.cloudhero.io:8080/providers"
 
 ```
 
-This endpoint is used to add a Amazon EC2 cloud provider. In order to do this you need to provide a valid AWS access key and AWS secret key.
+This endpoint is used to add Amazon EC2 cloud provider. In order to do this you need to provide a valid AWS access key and AWS secret key.
 
 Parameter | Description
 --------- | -----------
@@ -110,6 +110,44 @@ cloud_provider | The ID of the cloud provider ec2 for AWS
 provider_name | The name of the cloud provider
 accessKey | AWS access key
 secretKey | AWS secret key
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+## Add DigitalOcean
+
+> To add DigitalOcean cloud provider, use this code:
+
+```shell
+curl -X POST "http://s.cloudhero.io:8080/providers"
+  -H  "Content-Type: application/json"
+  -H "Authentication-Token: meowmeowmeow"
+  -d '{"cloud_provider": "digital_ocean", "provider_name": "my-provider", 
+       "access_token": "DOaccesToken"}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "provider_meta": {
+        "access_token": "56db164f10d396351aa949400200e56ded3d210d396176558b9b56"
+    },
+    "name": "default",
+    "organisation": "56db164f10d396351aa94940",
+    "id": "56ded3d210d396176558b9b5",
+    "provider_type": "digital_ocean"
+}
+```
+
+This endpoint is used to add DigitalOcean cloud provider. In order to do this you need to provide a valid DigitalOcean access token.
+
+Parameter | Description
+--------- | -----------
+cloud_provider | digitalocean
+provider_name | The name of the cloud provider
+access_token | DigitalOcean access token
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
