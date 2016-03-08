@@ -106,7 +106,7 @@ This endpoint is used to add Amazon EC2 cloud provider. In order to do this you 
 
 Parameter | Description
 --------- | -----------
-cloud_provider | The ID of the cloud provider ec2 for AWS
+cloud_provider | ec2
 provider_name | The name of the cloud provider
 accessKey | AWS access key
 secretKey | AWS secret key
