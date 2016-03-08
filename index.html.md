@@ -414,3 +414,179 @@ environment_id | ID of environment that you want to query
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
+
+## Stop all servers
+
+> To stop a running environment use this code:
+
+```shell
+curl -X GET "http://s.cloudhero.io:8080/environments/environment_id/stop"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+    "std_out": {
+        "account-username-aws-ec2": {
+            "ec2": {
+                "account-user-dev-1-staging1-ransom": [
+                    {
+                        "instanceId": "i-aa18ee31",
+                        "currentState": {
+                            "code": "64",
+                            "name": "stopping"
+                        },
+                        "previousState": {
+                            "code": "16",
+                            "name": "running"
+                        }
+                    }
+                ],
+                "account-user-dev-1-staging1-random": [
+                    {
+                        "instanceId": "i-ab18ee30",
+                        "currentState": {
+                            "code": "64",
+                            "name": "stopping"
+                        },
+                        "previousState": {
+                            "code": "16",
+                            "name": "running"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "success": true
+}
+```
+
+To stop all servers from your environments, send a GET requst to `/environments/environment_id/stop`
+
+Parameter | Description
+--------- | -----------
+environment_id | ID of environment that you want to query
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+## Start all servers
+
+> To start server from a stopped environment use this code:
+
+```shell
+curl -X GET "http://s.cloudhero.io:8080/environments/environment_id/start"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+    "std_out": {
+        "account-username-aws-ec2": {
+            "ec2": {
+                "account-user-dev-1-staging1-ransom": [
+                    {
+                        "instanceId": "i-aa18ee31",
+                        "currentState": {
+                            "code": "64",
+                            "name": "pending"
+                        },
+                        "previousState": {
+                            "code": "16",
+                            "name": "stopped"
+                        }
+                    }
+                ],
+                "account-user-dev-1-staging1-random": [
+                    {
+                        "instanceId": "i-ab18ee30",
+                        "currentState": {
+                            "code": "64",
+                            "name": "pending"
+                        },
+                        "previousState": {
+                            "code": "16",
+                            "name": "stopped"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "success": true
+}
+```
+
+To start all stopped servers from your environments, send a GET requst to `/environments/environment_id/start`
+
+Parameter | Description
+--------- | -----------
+environment_id | ID of environment that you want to query
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+## Delete all servers
+
+> To delete all servers from an environment use this code:
+
+```shell
+curl -X GET "http://s.cloudhero.io:8080/environments/environment_id/delete"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "std_out": {
+        "account-username-aws-ec2": {
+            "ec2": {
+                "account-user-dev-1-staging1-ransom": {
+                    "newname": "account-user-dev-1-staging1-ransom-DEL857660c7e82b41f08d7d0451d76fe160",
+                    "instanceId": "i-aa18ee31",
+                    "currentState": {
+                        "code": "32",
+                        "name": "shutting-down"
+                    },
+                    "previousState": {
+                        "code": "16",
+                        "name": "running"
+                    }
+                },
+                "account-user-dev-1-staging1-random": {
+                    "newname": "account-user-dev-1-staging1-random-DEL866bfceb90a14e9baebaf6be8b86b8ce",
+                    "instanceId": "i-ab18ee30",
+                    "currentState": {
+                        "code": "32",
+                        "name": "shutting-down"
+                    },
+                    "previousState": {
+                        "code": "16",
+                        "name": "running"
+                    }
+                }
+            }
+        }
+    },
+    "success": true
+}
+```
+
+To start all stopped servers from your environments, send a GET requst to `/environments/environment_id/delete`
+
+Parameter | Description
+--------- | -----------
+environment_id | ID of environment that you want to query
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
