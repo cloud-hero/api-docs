@@ -290,7 +290,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 # Environments
 
-## Create single server environment
+## Create single server
 
 > To createa a single server environment use this code:
 
@@ -327,7 +327,7 @@ size | Server size (eg. t2.micro)
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Create multiple server environment
+## Create multiple server
 
 > To createa a multiple server environment use this code:
 
