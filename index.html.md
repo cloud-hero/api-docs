@@ -630,3 +630,49 @@ environment_id | ID of environment that you want to query
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
+
+#Integrations
+
+CloudHero provides out of the box integrations with various apps and services to create new experiences for you.
+
+## Docker Hub
+
+> To add your Docker Hub account use this code:
+
+```shell
+curl -X POST "http://s.cloudhero.io:8080/integrations/docker-hub"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+     -d '{"name": "Andrei's docker integration", 
+          "url": "https://index.docker.io/v1/", 
+          "username": "bogdan", "password": "crdq2f6qwv", 
+          "email": "bogdan@nimblex.net"}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "name": "My Docker Account",
+    "organisation": "56dd890610d396380ecd959b",
+    "type": "docker-hub",
+    "id": "56df172610d39648c8063f3c",
+    "integration_meta": {
+        "url": "https://index.docker.io/v1/",
+        "username": "username",
+        "password": "jds98Ka",
+        "email": "user@email.net"
+    },
+    "_name": "my_docker_account"
+}
+```
+
+To add Docker Hub account, send a POST requst to `/integrations/docker-hub`
+
+Parameter | Description
+--------- | -----------
+environment_id | ID of environment that you want to query
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
