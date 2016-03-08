@@ -365,7 +365,7 @@ size | Server size (eg. t2.micro)
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Create multiple server
+## Create multiple servers
 
 > To createa a multiple server environment use this code:
 
