@@ -351,6 +351,8 @@ curl -X POST "http://s.cloudhero.io:8080/applications/application_id/environment
 }
 ```
 
+To create a multiple server environment, send a POST requst to /applications/application_id/environments
+
 Parameter | Description
 --------- | -----------
 application_id | Application ID
