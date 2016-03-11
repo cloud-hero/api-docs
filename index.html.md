@@ -694,7 +694,8 @@ CloudHero proivdes out of the box integration with Docker clusters provisioned t
 
 Our Docker API is 100% compatible with Docker API. You cand find more information about Docker API [here](https://docs.docker.com/engine/reference/api/docker_remote_api/).
 
-Base URI for creating requests is ```http://s.cloudhero.io:8080/swarm/containers/```
+Base URI for creating requests is:
+```http://s.cloudhero.io:8080/swarm/```
 
 ## Create
 
