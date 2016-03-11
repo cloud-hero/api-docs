@@ -18,7 +18,7 @@ search: true
 
 Welcome to the CloudHero API! You can use our API to create any type of server environments or a scalable and high available container service on top of major public or private cloud providers.
 
-A simple use case is to creare a scalable and high available Docker cluster on top of your favourite cloud provider.
+A simple use case is to create a scalable and high available Docker cluster on top of your favourite cloud provider.
 
 ![CloudHero Block Architecture](/images/ch-block.png)
 
