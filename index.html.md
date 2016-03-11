@@ -30,8 +30,8 @@ Method | Usage
 --------- | -----------
 GET | For simple retrieval of information about your account, Droplets, or environment, you should use the GET method. The information you request will be returned to you as a JSON object. The attributes defined by the JSON object can be used to form additional requests. Any request using the GET method is read-only and will not affect any of the objects you are querying.
 DELETE | To destroy a resource and remove it from your account and environment, the DELETE method should be used. This will remove the specified object if it is found. If it is not found, the operation will return a response indicating that the object was not found.
-PUT | To update the information about a resource in your account, the PUT method is available.\nLike the DELETE Method, the PUT method is idempotent. 
-It sets the state of the target using the provided values, regardless of their current values. Requests using the PUT method do not need to check the current attributes of the object.
+PUT | To update the information about a resource in your account, the PUT method is available.\nLike the DELETE Method, the PUT method is idempotent. It sets the state of the target using the provided values, regardless of their current values. Requests using the PUT method do not need to check the current attributes of the object.
+POST | To create a new object, your request should specify the POST method. The POST request includes all of the attributes necessary to create a new object. When you wish to create a new object, send a POST request to the target endpoint.
 
 
 # Authentication
@@ -692,7 +692,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 CloudHero proivdes out of the box integration with Docker clusters provisioned trough CloudHero API
 
-Our Docker API is 100% compatible with Docker API. You cand find more information about Docker API here(link).
+Our Docker API is 100% compatible with Docker API. You cand find more information about Docker API [here link](https://docs.docker.com/engine/reference/api/docker_remote_api/).
 
 
 
