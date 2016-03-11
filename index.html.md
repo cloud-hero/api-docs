@@ -1032,7 +1032,7 @@ curl -X GET "http://s.cloudhero.io:8080/swarm/environment_id/containers/containe
             "storagedriver": "aufs"
         },
         "Memory": 1047519232,
-        "Name": "andreivectordev-vdp-staging-docker1"
+        "Name": "servername"
     },
     "Path": "npm",
     "ProcessLabel": "",
@@ -1054,7 +1054,7 @@ curl -X GET "http://s.cloudhero.io:8080/swarm/environment_id/containers/containe
 }
 ```
 
-To remove a Docker container, send a DELETE requst to `/containers/container_id`
+To inspect a Docker container, send a GET requst to `/containers/container_id/json`
 
 Parameter | Description
 --------- | -----------
