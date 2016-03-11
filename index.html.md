@@ -404,6 +404,52 @@ size | Server size (eg. t2.micro)
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
+## Create Docker cluster
+
+> To createa a multiple server Docker cluster use this code:
+
+```shell
+curl -X POST "http://s.cloudhero.io:8080/applications/application_id/environments"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+     -d '{"provider_id": "56dd8bb410d396398074aa16", 
+          "region": "region", "environment": "env_name", 
+          "nodes": [{"packages": ["docker"], "name": "node_name1", "size": "size"},
+                    {"packages": ["docker"], "name": "node_name2", "size": "size"},
+                    {"packages": ["docker"], "name": "node_name3", "size": "size"}]}
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "ready": true, 
+  "environment": "52dea11f10d39637655819b1", 
+  "account": "56da890610d396320ecd159b"
+}
+```
+
+To create a multiple server Docker cluster, send a POST requst to /applications/application_id/environments and use `docker` for packages.
+
+Parameter | Description
+--------- | -----------
+application_id | Application ID
+region | Server region (eg. "us-east-1")
+env_name | Environment name (eg. production)
+pkg_name | docker
+node_name | Give your server a name
+size | Server size (eg. t2.micro)
+
+You can now connect to your Docker cluster using Docker cli client to connect to any of the provisioned nodes on port ```4000```, or via CloudHero swarm endpoint.
+
+Example:
+
+```docker -H 50.21.17.214:4000 info```
+
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
 ## Query environment
 
 > To query an environment use this code:
