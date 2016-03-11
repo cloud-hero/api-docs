@@ -413,6 +413,7 @@ To create a single server environment, send a POST requst to `/applications/appl
 Parameter | Description
 --------- | -----------
 application_id | Application ID
+provider_id | Cloud Provider ID
 region | Server region (eg. "us-east-1")
 env_name | Environment name (eg. production)
 pkg_name | Selected pakages to be installe on server (eg. docker, mysql, apache)
@@ -452,6 +453,7 @@ To create a multiple server environment, send a POST requst to /applications/app
 Parameter | Description
 --------- | -----------
 application_id | Application ID
+provider_id | Cloud Provider ID
 region | Server region (eg. "us-east-1")
 env_name | Environment name (eg. production)
 pkg_name | Selected pakages to be installe on server (eg. docker, mysql, apache)
@@ -471,6 +473,7 @@ curl -X POST "http://s.cloudhero.io:8080/applications/application_id/environment
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
      -d '{"provider_id": "56dd8bb410d396398074aa16", 
+          "integrations": ["56df13aa10d39648c8063f3b"],
           "region": "region", "environment": "env_name", 
           "nodes": [{"packages": ["docker"], "name": "node_name1", "size": "size"},
                     {"packages": ["docker"], "name": "node_name2", "size": "size"},
@@ -491,6 +494,8 @@ To create a multiple server Docker cluster, send a POST requst to /applications/
 Parameter | Description
 --------- | -----------
 application_id | Application ID
+integrations | DockerHub integration ID
+provider_id | Cloud Provider ID
 region | Server region (eg. "us-east-1")
 env_name | Environment name (eg. production)
 pkg_name | docker
