@@ -18,6 +18,8 @@ search: true
 
 Welcome to the CloudHero API! You can use our API to create any type of server environments or a scalable and high available container service on top of major public or private cloud providers.
 
+A simple use case is to creare a scalable and high available Docker cluster on top of your favourite cloud provider.
+
 ![CloudHero Block Architecture](/images/ch-block.png)
 
 We have language bindings in Shell and Python (comming soon)! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
