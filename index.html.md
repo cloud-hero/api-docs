@@ -22,6 +22,17 @@ Welcome to the CloudHero API! You can use our API to create any type of server e
 
 We have language bindings in Shell and Python (comming soon)! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
+## Requests
+
+Any tool that is fluent in HTTP can communicate with the API simply by requesting the correct URI. Requests should be made using the HTTPS protocol so that traffic is encrypted. The interface responds to different methods depending on the action required.
+
+Method | Usage
+--------- | -----------
+GET | For simple retrieval of information about your account, Droplets, or environment, you should use the GET method. The information you request will be returned to you as a JSON object.
+
+The attributes defined by the JSON object can be used to form additional requests. Any request using the GET method is read-only and will not affect any of the objects you are querying.
+DELETE | To destroy a resource and remove it from your account and environment, the DELETE method should be used. This will remove the specified object if it is found. If it is not found, the operation will return a response indicating that the object was not found.
+
 
 # Authentication
 ## Register
@@ -676,6 +687,14 @@ environment_id | ID of environment that you want to query
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
+
+#Docker Cluster
+
+CloudHero proivdes out of the box integration with Docker clusters provisioned trough CloudHero API
+
+Our Docker API is 100% compatible with Docker API. You cand find more information about Docker API here(link).
+
+
 
 #Integrations
 
