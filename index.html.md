@@ -692,7 +692,51 @@ Remember — a happy kitten is an authenticated kitten!
 
 CloudHero proivdes out of the box integration with Docker clusters provisioned trough CloudHero API
 
-Our Docker API is 100% compatible with Docker API. You cand find more information about Docker API [here link](https://docs.docker.com/engine/reference/api/docker_remote_api/).
+Our Docker API is 100% compatible with Docker API. You cand find more information about Docker API [here](https://docs.docker.com/engine/reference/api/docker_remote_api/).
+
+Base URI for creating requests is ```http://s.cloudhero.io:8080/swarm/containers/```
+
+## Create
+
+> To create a container use this code:
+
+```shell
+curl -X POST "http://s.cloudhero.io:8080/swarm/environment_id/containers/create"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+     -d '{"Hostname":"hostname", "AttachStdin":false,
+          "AttachStdout":true,"AttachStderr":true, "Tty":false,
+          "NetworkMode": "default", "PublishAllPorts": false,  
+          "OpenStdin":false,"StdinOnce":false,"Env":["FOO=bar","BAZ=quux"],
+          "Image":"nginx","NetworkDisabled":false, 
+          "HostConfig":{"PortBindings": { "80/tcp": [{ "HostPort": "", "HostIp": ""}] }}}}
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "Id": "feda01cd2e9ac025acafd78e576ee3597fe1c8c3eb59051b9e3ac7504b4c6242"
+}
+```
+
+To create a Docker container, send a POST requst to `/containers/create`
+
+Parameter | Description
+--------- | -----------
+environment_id | ID of environment that you want to query
+
+In return you will receive ```container ID```
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+## Start
+
+## Stop
+
+## Inspect
 
 
 
@@ -710,8 +754,8 @@ curl -X POST "http://s.cloudhero.io:8080/integrations/docker-hub"
      -H "Authentication-Token: meowmeowmeow"
      -d '{"name": "Andrei's docker integration", 
           "url": "https://index.docker.io/v1/", 
-          "username": "bogdan", "password": "crdq2f6qwv", 
-          "email": "bogdan@nimblex.net"}'
+          "username": "username", "password": "secretpass", 
+          "email": "user@email.net"}'
 ```
 
 > The above command returns JSON structured like this:
