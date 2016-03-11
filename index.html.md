@@ -787,6 +787,277 @@ Remember — a happy kitten is an authenticated kitten!
 
 ## Start
 
+> To start a container use this code:
+
+```shell
+curl -X POST "http://s.cloudhero.io:8080/swarm/environment_id/containers/container_id/start"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+```
+
+> The above command returns a 204 NO CONTENT message:
+
+To start a Docker container, send a POST requst to `/containers/container_id/start`
+
+Parameter | Description
+--------- | -----------
+environment_id | ID of environment that you want to query
+container_id | ID of container that you want to start
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
 ## Stop
 
+> To stop a container use this code:
+
+```shell
+curl -X POST "http://s.cloudhero.io:8080/swarm/environment_id/containers/container_id/stop"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+```
+
+> The above command returns a 204 NO CONTENT message:
+
+To stop a Docker container, send a POST requst to `/containers/container_id/stop`
+
+Parameter | Description
+--------- | -----------
+environment_id | ID of environment that you want to query
+container_id | ID of container that you want to stop
+
+## Remove
+
+> To remove (delete) a stopped container use this code:
+
+```shell
+curl -X DELETE "http://s.cloudhero.io:8080/swarm/environment_id/containers/container_id"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+```
+
+> The above command returns a 204 NO CONTENT message:
+
+To remove a Docker container, send a DELETE requst to `/containers/container_id`
+
+Parameter | Description
+--------- | -----------
+environment_id | ID of environment that you want to query
+container_id | ID of container that you want to stop
+
 ## Inspect
+
+> To inspect a container use this code:
+
+```shell
+curl -X GET "http://s.cloudhero.io:8080/swarm/environment_id/containers/container_id/json"
+     -H  "Content-Type: application/json"
+     -H "Authentication-Token: meowmeowmeow"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "AppArmorProfile": "",
+    "Args": [
+        "start"
+    ],
+    "Config": {
+        "AttachStderr": true,
+        "AttachStdin": false,
+        "AttachStdout": true,
+        "Cmd": [
+            "npm",
+            "start"
+        ],
+        "Domainname": "",
+        "Entrypoint": null,
+        "Env": [
+            "FOO=bar",
+            "BAZ=quux",
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "NODE_VERSION=0.10.42",
+            "NPM_VERSION=2.14.1"
+        ],
+        "ExposedPorts": {
+            "8080/tcp": {}
+        },
+        "Hostname": "node",
+        "Image": "node",
+        "Labels": {
+            "com.docker.swarm.id": "8587fef9c9c83629fbc39424308cb6586ae110f89214c4093683becb722a8df5"
+        },
+        "OnBuild": null,
+        "OpenStdin": false,
+        "StdinOnce": false,
+        "Tty": false,
+        "User": "",
+        "Volumes": null,
+        "WorkingDir": "/usr/src/app"
+    },
+    "Created": "2016-03-11T13:23:11.802024242Z",
+    "Driver": "aufs",
+    "ExecIDs": null,
+    "GraphDriver": {
+        "Data": null,
+        "Name": "aufs"
+    },
+    "HostConfig": {
+        "Binds": null,
+        "BlkioDeviceReadBps": null,
+        "BlkioDeviceReadIOps": null,
+        "BlkioDeviceWriteBps": null,
+        "BlkioDeviceWriteIOps": null,
+        "BlkioWeight": 0,
+        "BlkioWeightDevice": null,
+        "CapAdd": null,
+        "CapDrop": null,
+        "CgroupParent": "",
+        "ConsoleSize": [
+            0,
+            0
+        ],
+        "ContainerIDFile": "",
+        "CpuPeriod": 0,
+        "CpuQuota": 0,
+        "CpuShares": 0,
+        "CpusetCpus": "",
+        "CpusetMems": "",
+        "Devices": null,
+        "Dns": null,
+        "DnsOptions": null,
+        "DnsSearch": null,
+        "ExtraHosts": null,
+        "GroupAdd": null,
+        "IpcMode": "",
+        "Isolation": "",
+        "KernelMemory": 0,
+        "Links": null,
+        "LogConfig": {
+            "Config": {},
+            "Type": "json-file"
+        },
+        "Memory": 0,
+        "MemoryReservation": 0,
+        "MemorySwap": 0,
+        "MemorySwappiness": -1,
+        "NetworkMode": "default",
+        "OomKillDisable": false,
+        "OomScoreAdj": 0,
+        "PidMode": "",
+        "PidsLimit": 0,
+        "PortBindings": {
+            "8080/tcp": [
+                {
+                    "HostIp": "",
+                    "HostPort": ""
+                }
+            ]
+        },
+        "Privileged": false,
+        "PublishAllPorts": false,
+        "ReadonlyRootfs": false,
+        "RestartPolicy": {
+            "MaximumRetryCount": 0,
+            "Name": ""
+        },
+        "SecurityOpt": null,
+        "ShmSize": 67108864,
+        "UTSMode": "",
+        "Ulimits": null,
+        "VolumeDriver": "",
+        "VolumesFrom": null
+    },
+    "HostnamePath": "/var/lib/docker/containers/13ad5f0607c4925f39a796de5979811c4e667c818dc2f0459bab6b2011f0c519/hostname",
+    "HostsPath": "/var/lib/docker/containers/13ad5f0607c4925f39a796de5979811c4e667c818dc2f0459bab6b2011f0c519/hosts",
+    "Id": "13ad5f0607c4925f39a796de5979811c4e667c818dc2f0459bab6b2011f0c519",
+    "Image": "sha256:8052ee4694d22b41edd5bb62e5329c0bdad2b09f338e774554cf66b59b086ee0",
+    "LogPath": "/var/lib/docker/containers/13ad5f0607c4925f39a796de5979811c4e667c818dc2f0459bab6b2011f0c519/13ad5f0607c4925f39a796de5979811c4e667c818dc2f0459bab6b2011f0c519-json.log",
+    "MountLabel": "",
+    "Mounts": [],
+    "Name": "/adoring_poitras",
+    "NetworkSettings": {
+        "Bridge": "",
+        "EndpointID": "481adf0ff9c630e5c1d92a61427b2e72dc01c7f0e4da27f6d307f5cc02e87ef1",
+        "Gateway": "172.17.0.1",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "HairpinMode": false,
+        "IPAddress": "172.17.0.4",
+        "IPPrefixLen": 16,
+        "IPv6Gateway": "",
+        "LinkLocalIPv6Address": "",
+        "LinkLocalIPv6PrefixLen": 0,
+        "MacAddress": "02:42:ac:11:00:04",
+        "Networks": {
+            "bridge": {
+                "Aliases": null,
+                "EndpointID": "481adf0ff9c630e5c1d92a61427b2e72dc01c7f0e4da27f6d307f5cc02e87ef1",
+                "Gateway": "172.17.0.1",
+                "GlobalIPv6Address": "",
+                "GlobalIPv6PrefixLen": 0,
+                "IPAMConfig": null,
+                "IPAddress": "172.17.0.4",
+                "IPPrefixLen": 16,
+                "IPv6Gateway": "",
+                "Links": null,
+                "MacAddress": "02:42:ac:11:00:04",
+                "NetworkID": "795a3489be2cce3ada436b7da8dcaf9af00ab658c1deb08c73e8457afacd215a"
+            }
+        },
+        "Ports": {
+            "8080/tcp": [
+                {
+                    "HostIp": "172.31.19.58",
+                    "HostPort": "32774"
+                }
+            ]
+        },
+        "SandboxID": "f32876d8f43fd4a2e68db43678049d31a6e2ad51f2c2ef35c800d4a282779c5a",
+        "SandboxKey": "/var/run/docker/netns/f32876d8f43f",
+        "SecondaryIPAddresses": null,
+        "SecondaryIPv6Addresses": null
+    },
+    "Node": {
+        "Addr": "172.31.19.58:2375",
+        "Cpus": 1,
+        "ID": "WQLW:72TL:X5P2:Q7X3:QKHW:JO6G:45CP:BPGJ:K23G:MUDM:KBQU:6ZHM",
+        "IP": "172.31.19.58",
+        "Labels": {
+            "executiondriver": "native-0.2",
+            "kernelversion": "3.16.0-4-amd64",
+            "operatingsystem": "Debian GNU/Linux 8 (jessie)",
+            "storagedriver": "aufs"
+        },
+        "Memory": 1047519232,
+        "Name": "andreivectordev-vdp-staging-docker1"
+    },
+    "Path": "npm",
+    "ProcessLabel": "",
+    "ResolvConfPath": "/var/lib/docker/containers/13ad5f0607c4925f39a796de5979811c4e667c818dc2f0459bab6b2011f0c519/resolv.conf",
+    "RestartCount": 0,
+    "State": {
+        "Dead": false,
+        "Error": "",
+        "ExitCode": 0,
+        "FinishedAt": "0001-01-01T00:00:00Z",
+        "OOMKilled": false,
+        "Paused": false,
+        "Pid": 21990,
+        "Restarting": false,
+        "Running": true,
+        "StartedAt": "2016-03-11T13:23:27.188403417Z",
+        "Status": "running"
+    }
+}
+```
+
+To remove a Docker container, send a DELETE requst to `/containers/container_id`
+
+Parameter | Description
+--------- | -----------
+environment_id | ID of environment that you want to query
+container_id | ID of container that you want to stop
+
