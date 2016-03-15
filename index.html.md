@@ -43,7 +43,7 @@ POST | To create a new object, your request should specify the POST method. The 
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "http://s.cloudhero.io:8080/accounts/register"
+curl "https://api.cloudhero.io/accounts/register"
   -H "Content-Type: application/json" 
   -d '{"email": "my@email.com", "password": "secretpassword", 
        "password_confirm": "secretpassword", "name": "company name", 
@@ -87,7 +87,7 @@ CloudHero expects for the API key to be included in all API requests to the serv
 > To add Amazon EC2 cloud provider, use this code:
 
 ```shell
-curl -X POST "http://s.cloudhero.io:8080/providers"
+curl -X POST "https://api.cloudhero.io/providers"
   -H  "Content-Type: application/json"
   -H "Authentication-Token: meowmeowmeow"
   -d '{"cloud_provider": "ec2", "provider_name": "my-provider", 
@@ -133,7 +133,7 @@ Remember — a happy kitten is an authenticated kitten!
 > To add DigitalOcean cloud provider, use this code:
 
 ```shell
-curl -X POST "http://s.cloudhero.io:8080/providers"
+curl -X POST "https://api.cloudhero.io/providers"
   -H  "Content-Type: application/json"
   -H "Authentication-Token: meowmeowmeow"
   -d '{"cloud_provider": "digital_ocean", "provider_name": "my-provider", 
@@ -169,7 +169,7 @@ Remember — a happy kitten is an authenticated kitten!
 ## Get available providers
 
 ```shell
-curl -X GET "http://s.cloudhero.io:8080/providers"
+curl -X GET "https://api.cloudhero.io/providers"
      -H "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
 ```
@@ -215,7 +215,7 @@ Remember — a happy kitten is an authenticated kitten!
 ## Get cloud provider metadata
 
 ```shell
-curl -X GET "http://s.cloudhero.io:8080/providers/cloud_provider_id/meta"
+curl -X GET "https://api.cloudhero.io/providers/cloud_provider_id/meta"
      -H "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
 ```
@@ -280,7 +280,7 @@ Remember — a happy kitten is an authenticated kitten!
 > To add a new application, use this code:
 
 ```shell
-curl -X POST "http://s.cloudhero.io:8080/applications" 
+curl -X POST "https://api.cloudhero.io/applications" 
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
      -d '{"application_name": "My App", "application_type": "custom"}
@@ -315,7 +315,7 @@ Remember — a happy kitten is an authenticated kitten!
 > To get info about your applications, use this code:
 
 ```shell
-curl -X GET "http://s.cloudhero.io:8080/applications" 
+curl -X GET "https://api.cloudhero.io/applications" 
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
 ```
@@ -348,7 +348,7 @@ CloudHero provides out of the box integrations with various apps and services to
 > To add your Docker Hub account use this code:
 
 ```shell
-curl -X POST "http://s.cloudhero.io:8080/integrations/docker-hub"
+curl -X POST "https://api.cloudhero.io/integrations/docker-hub"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
      -d '{"name": "Andrei's docker integration", 
@@ -393,7 +393,7 @@ Remember — a happy kitten is an authenticated kitten!
 > To createa a single server environment use this code:
 
 ```shell
-curl -X POST "http://s.cloudhero.io:8080/applications/application_id/environments"
+curl -X POST "https://api.cloudhero.io/applications/application_id/environments"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
      -d '{"provider_id": "56dd8bb410d396398074aa16", 
@@ -431,7 +431,7 @@ Remember — a happy kitten is an authenticated kitten!
 > To createa a multiple server environment use this code:
 
 ```shell
-curl -X POST "http://s.cloudhero.io:8080/applications/application_id/environments"
+curl -X POST "https://api.cloudhero.io/applications/application_id/environments"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
      -d '{"provider_id": "56dd8bb410d396398074aa16", 
@@ -471,7 +471,7 @@ Remember — a happy kitten is an authenticated kitten!
 > To createa a multiple server Docker cluster use this code:
 
 ```shell
-curl -X POST "http://s.cloudhero.io:8080/applications/application_id/environments"
+curl -X POST "https://api.cloudhero.io/applications/application_id/environments"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
      -d '{"provider_id": "56dd8bb410d396398074aa16", 
@@ -520,7 +520,7 @@ Remember — a happy kitten is an authenticated kitten!
 > To query an environment use this code:
 
 ```shell
-curl -X GET "http://s.cloudhero.io:8080/environments/environment_id/query"
+curl -X GET "https://api.cloudhero.io/environments/environment_id/query"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
 ```
@@ -571,7 +571,7 @@ Remember — a happy kitten is an authenticated kitten!
 > To stop a running environment use this code:
 
 ```shell
-curl -X GET "http://s.cloudhero.io:8080/environments/environment_id/stop"
+curl -X GET "https://api.cloudhero.io/environments/environment_id/stop"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
 ```
@@ -630,7 +630,7 @@ Remember — a happy kitten is an authenticated kitten!
 > To start server from a stopped environment use this code:
 
 ```shell
-curl -X GET "http://s.cloudhero.io:8080/environments/environment_id/start"
+curl -X GET "https://api.cloudhero.io/environments/environment_id/start"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
 ```
@@ -689,7 +689,7 @@ Remember — a happy kitten is an authenticated kitten!
 > To delete all servers from an environment use this code:
 
 ```shell
-curl -X GET "http://s.cloudhero.io:8080/environments/environment_id/delete"
+curl -X GET "https://api.cloudhero.io/environments/environment_id/delete"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
 ```
@@ -749,14 +749,14 @@ CloudHero proivdes out of the box integration with Docker clusters provisioned t
 Our Docker API is 100% compatible with Docker API. You cand find more information about Docker API [here](https://docs.docker.com/engine/reference/api/docker_remote_api/).
 
 Base URI for creating requests is:
-```http://s.cloudhero.io:8080/swarm/```
+```https://api.cloudhero.io/swarm/```
 
 ## Create
 
 > To create a container use this code:
 
 ```shell
-curl -X POST "http://s.cloudhero.io:8080/swarm/environment_id/containers/create"
+curl -X POST "https://api.cloudhero.io/swarm/environment_id/containers/create"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
      -d '{"Hostname":"hostname", "AttachStdin":false,
@@ -792,7 +792,7 @@ Remember — a happy kitten is an authenticated kitten!
 > To start a container use this code:
 
 ```shell
-curl -X POST "http://s.cloudhero.io:8080/swarm/environment_id/containers/container_id/start"
+curl -X POST "https://api.cloudhero.io/swarm/environment_id/containers/container_id/start"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
 ```
@@ -815,7 +815,7 @@ Remember — a happy kitten is an authenticated kitten!
 > To stop a container use this code:
 
 ```shell
-curl -X POST "http://s.cloudhero.io:8080/swarm/environment_id/containers/container_id/stop"
+curl -X POST "https://api.cloudhero.io/swarm/environment_id/containers/container_id/stop"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
 ```
@@ -834,7 +834,7 @@ container_id | ID of container that you want to stop
 > To remove (delete) a stopped container use this code:
 
 ```shell
-curl -X DELETE "http://s.cloudhero.io:8080/swarm/environment_id/containers/container_id"
+curl -X DELETE "https://api.cloudhero.io/swarm/environment_id/containers/container_id"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
 ```
@@ -853,7 +853,7 @@ container_id | ID of container that you want to stop
 > To inspect a container use this code:
 
 ```shell
-curl -X GET "http://s.cloudhero.io:8080/swarm/environment_id/containers/container_id/json"
+curl -X GET "https://api.cloudhero.io/swarm/environment_id/containers/container_id/json"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
 ```
