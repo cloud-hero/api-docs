@@ -30,7 +30,7 @@ Any tool that is fluent in HTTP can communicate with the API simply by requestin
 
 Method | Usage
 --------- | -----------
-GET | For simple retrieval of information about your account, applications, providers, integrations or environments§, you should use the GET method. The information you request will be returned to you as a JSON object. The attributes defined by the JSON object can be used to form additional requests. Any request using the GET method is read-only and will not affect any of the objects you are querying.
+GET | For simple retrieval of information about your account, applications, providers, integrations or environments, you should use the GET method. The information you request will be returned to you as a JSON object. The attributes defined by the JSON object can be used to form additional requests. Any request using the GET method is read-only and will not affect any of the objects you are querying.
 DELETE | To destroy a resource and remove it from your account and environment, the DELETE method should be used. This will remove the specified object if it is found. If it is not found, the operation will return a response indicating that the object was not found.
 PUT | To update the information about a resource in your account, the PUT method is available.\nLike the DELETE Method, the PUT method is idempotent. It sets the state of the target using the provided values, regardless of their current values. Requests using the PUT method do not need to check the current attributes of the object.
 POST | To create a new object, your request should specify the POST method. The POST request includes all of the attributes necessary to create a new object. When you wish to create a new object, send a POST request to the target endpoint.
