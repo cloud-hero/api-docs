@@ -628,7 +628,7 @@ environment_id | ID of environment that you want to query
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Start all servers
+### Start all servers
 
 > To start server from a stopped environment use this code:
 
@@ -688,7 +688,7 @@ environment_id | ID of environment that you want to query
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Delete all servers
+### Delete all servers
 
 > To delete all servers from an environment use this code:
 
