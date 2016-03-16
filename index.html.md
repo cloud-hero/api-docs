@@ -523,7 +523,7 @@ Remember — a happy kitten is an authenticated kitten!
 curl -X GET "https://api.cloudhero.io/environments/environment_id/actions"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
-      -d '{"type": "action_type", 
+      -d '{"type": "action_type"}'
 ```
 > The above command returns JSON structured like this:
 
@@ -568,14 +568,15 @@ action_type | Type of actions: start, stop, delete, query
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Stop all servers
+### Stop all servers
 
 > To stop a running environment use this code:
 
 ```shell
-curl -X GET "https://api.cloudhero.io/environments/environment_id/stop"
+curl -X GET "https://api.cloudhero.io/environments/environment_id/actions"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
+     -d '{"type": "stop"}'
 ```
 > The above command returns JSON structured like this:
 
@@ -617,7 +618,7 @@ curl -X GET "https://api.cloudhero.io/environments/environment_id/stop"
 }
 ```
 
-To stop all servers from your environments, send a GET requst to `/environments/environment_id/stop`
+To stop all servers from your environments, send a POST requst to `/environments/environment_id/actions` 
 
 Parameter | Description
 --------- | -----------
@@ -632,9 +633,10 @@ Remember — a happy kitten is an authenticated kitten!
 > To start server from a stopped environment use this code:
 
 ```shell
-curl -X GET "https://api.cloudhero.io/environments/environment_id/start"
+curl -X GET "https://api.cloudhero.io/environments/environment_id/actions"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
+    -d '{"type": "start"}'
 ```
 > The above command returns JSON structured like this:
 
@@ -676,7 +678,7 @@ curl -X GET "https://api.cloudhero.io/environments/environment_id/start"
 }
 ```
 
-To start all stopped servers from your environments, send a GET requst to `/environments/environment_id/start`
+To start all stopped servers from your environments, send a POST requst to `/environments/environment_id/actions`
 
 Parameter | Description
 --------- | -----------
@@ -691,9 +693,10 @@ Remember — a happy kitten is an authenticated kitten!
 > To delete all servers from an environment use this code:
 
 ```shell
-curl -X GET "https://api.cloudhero.io/environments/environment_id/delete"
+curl -X GET "https://api.cloudhero.io/environments/environment_id/actions"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
+     -d '{"type": "action_type"}'
 ```
 
 > The above command returns JSON structured like this:
@@ -734,7 +737,7 @@ curl -X GET "https://api.cloudhero.io/environments/environment_id/delete"
 }
 ```
 
-To start all stopped servers from your environments, send a GET requst to `/environments/environment_id/delete`
+To start all stopped servers from your environments, send a GET requst to `/environments/environment_id/actions`
 
 Parameter | Description
 --------- | -----------
