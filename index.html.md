@@ -515,14 +515,15 @@ Example:
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Query environment
+## Actions
 
-> To query an environment use this code:
+> To execute an action against an environment use this code:
 
 ```shell
-curl -X GET "https://api.cloudhero.io/environments/environment_id/query"
+curl -X GET "https://api.cloudhero.io/environments/environment_id/actions"
      -H  "Content-Type: application/json"
      -H "Authentication-Token: meowmeowmeow"
+      -d '{"type": "action_type", 
 ```
 > The above command returns JSON structured like this:
 
@@ -556,11 +557,12 @@ curl -X GET "https://api.cloudhero.io/environments/environment_id/query"
 }
 ```
 
-To query your environments, send a GET requst to `/environments/environment_id/query`
+To execute an action against your environments, send a POST requst to `/environments/environment_id/action`
 
 Parameter | Description
 --------- | -----------
 environment_id | ID of environment that you want to query
+action_type | Type of actions: start, stop, delete, query
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
